@@ -2,7 +2,7 @@
 
 @section('styles')
 <style>
-/* CSS เฉพาะหน้า Home (Hero, กริดข่าว, Sidebar) */
+/* CSS เฉพาะของหน้าแรก (Hero, Sidebar, Grid) */
 .hero { display: grid; grid-template-columns: 1fr 260px; gap: 22px; margin-bottom: 24px; align-items: stretch; }
 .hero-main-slider { background: var(--navy); border-radius: 13px; position: relative; overflow: hidden; height: 100%; }
 .hero-track { display: flex; height: 100%; transition: transform 0.5s ease-in-out; }
@@ -20,6 +20,7 @@
 .hero-arrow:hover { background: var(--gold); color: #fff; }
 .hero-arrow.prev { left: 10px; }
 .hero-arrow.next { right: 10px; }
+
 .hero-side { display: flex; flex-direction: column; justify-content: space-between; height: 100%; gap: 13px; }
 .director-card { background: var(--white); border: 1px solid var(--line); border-radius: 11px; padding: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-grow: 1; }
 .director-avatar { width: 90px; aspect-ratio: 3 / 4; border-radius: 8px; margin-bottom: 12px; background: linear-gradient(145deg, #c8dff0, #8fb8d8); border: 3px solid var(--gold-lt); overflow: hidden; }
@@ -41,6 +42,24 @@
 .sec-head h2{font-size:1.1rem;color:var(--navy);}
 .sec-head .more{font-size:.78rem;font-weight:600;color:var(--navy);}
 .sec-head .more:hover{color:var(--gold);}
+
+.video-cta { min-height: 280px; background: linear-gradient(to top, rgba(13, 38, 68, 0.95) 0%, rgba(13, 38, 68, 0.1) 70%), url('{{ asset("images/orange2.jpg") }}') center/cover no-repeat; background-color: var(--navy); border: 1px solid var(--line); border-radius: 10px; padding: 24px 28px; display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(13,38,68,0.15); overflow: hidden; }
+.video-cta-text h3 { color: #ffffff; font-size: 1.2rem; margin-bottom: 4px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+.video-cta-text p { color: #ccdbe9; font-size: .85rem; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+.video-cta-btn { background: var(--gold-bg); color: var(--navy); font-weight: 700; font-size: .85rem; padding: 10px 20px; border: none; border-radius: 8px; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s, background 0.2s; }
+.video-cta-btn:hover { background: var(--gold); color: #fff; transform: translateY(-2px); }
+
+.campaign-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 26px; }
+.camp-card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: block; text-align: center; transition: transform .15s, border-color .15s; }
+.camp-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 6px 16px rgba(13,38,68,0.08); }
+.camp-card .img-ph { background: #e4ebf2; display: flex; align-items: center; justify-content: center; color: #8ba0b5; font-size: .75rem; font-weight: 600; padding: 10px; aspect-ratio: 16 / 9; width: 100%; height: 100%; object-fit: cover; }
+.camp-card .camp-title { padding: 10px; font-size: .78rem; font-weight: 600; color: var(--navy); }
+.camp-card.full { grid-column: span 2; }
+.camp-card.full .img-ph { padding: 10px; aspect-ratio: 21 / 9; }
+
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:26px;}
+.info-card { background: var(--white); border: 1px solid var(--line); border-radius: 9px; background: linear-gradient(145deg,#dbe8f5,#c0d4e8); display: flex; align-items: center; justify-content: center; font-size: .78rem; color: var(--navy); font-weight: 600; text-align: center; padding: 10px; aspect-ratio: 4 / 3; min-height: 200px; width: 100%; height: 100%; object-fit: cover; }
+
 .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
 .news-card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .15s,box-shadow .15s;}
 .news-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(13,38,68,.1);}
@@ -49,28 +68,21 @@
 .news-body{padding:11px 12px 13px;}
 .news-body h3{font-size:.82rem;color:var(--ink);font-weight:600;line-height:1.45;}
 .news-body p{font-size:.72rem;color:var(--muted);margin-top:5px;}
+
 .activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:13px;}
 .activity-card{background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden;}
 .activity-img { aspect-ratio: 16 / 9; background: linear-gradient(145deg,#c8dae8,#9ab8ce); width: 100%; height: 100%; object-fit: cover; }
 .activity-caption{font-size:.7rem;color:var(--muted);padding:6px 9px 8px;line-height:1.4;}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:26px;}
-.info-card { background: var(--white); border: 1px solid var(--line); border-radius: 9px; background: linear-gradient(145deg,#dbe8f5,#c0d4e8); display: flex; align-items: center; justify-content: center; font-size: .78rem; color: var(--navy); font-weight: 600; text-align: center; padding: 10px; aspect-ratio: 4 / 3; min-height: 200px; width: 100%; height: 100%; object-fit: cover; }
+
 .elearn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:28px;}
 .elearn-card{background:var(--navy);color:#fff;border-radius:9px;padding:14px;text-align:center;font-size:.76rem;}
 .elearn-card h4{color:var(--gold-lt);margin-bottom:4px;font-size:.85rem;}
 .elearn-card p{color:#9fb8cc;font-size:.7rem;}
-.video-cta { min-height: 280px; background: linear-gradient(to top, rgba(13, 38, 68, 0.95) 0%, rgba(13, 38, 68, 0.1) 70%), url('{{ asset("images/orange2.jpg") }}') center/cover no-repeat; background-color: var(--navy); border: 1px solid var(--line); border-radius: 10px; padding: 24px 28px; display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(13,38,68,0.15); overflow: hidden; }
-.video-cta-text h3 { color: #ffffff; font-size: 1.2rem; margin-bottom: 4px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
-.video-cta-text p { color: #ccdbe9; font-size: .85rem; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
-.video-cta-btn { background: var(--gold-bg); color: var(--navy); font-weight: 700; font-size: .85rem; padding: 10px 20px; border: none; border-radius: 8px; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s, background 0.2s; }
-.video-cta-btn:hover { background: var(--gold); color: #fff; transform: translateY(-2px); }
-.campaign-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 26px; }
-.camp-card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: block; text-align: center; transition: transform .15s, border-color .15s; }
-.camp-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 6px 16px rgba(13,38,68,0.08); }
-.camp-card .img-ph { background: #e4ebf2; display: flex; align-items: center; justify-content: center; color: #8ba0b5; font-size: .75rem; font-weight: 600; padding: 10px; aspect-ratio: 16 / 9; width: 100%; height: 100%; object-fit: cover; }
-.camp-card .camp-title { padding: 10px; font-size: .78rem; font-weight: 600; color: var(--navy); }
-.camp-card.full { grid-column: span 2; }
-.camp-card.full .img-ph { padding: 10px; aspect-ratio: 21 / 9; }
+
+.media-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.media-chip{background:var(--white);border:1px solid var(--line);border-radius:7px;padding:7px 13px;font-size:.76rem;font-weight:600;color:var(--muted);}
+.media-chip:hover{border-color:var(--gold);color:var(--navy);}
+
 .widget{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px;}
 .widget-header{display:flex;align-items:center;gap:7px;padding:9px 13px;font-weight:700;font-size:.82rem;color:var(--navy);border-bottom:1px solid var(--line);background:var(--cream);}
 .widget-header::before{content:"";width:4px;height:14px;background:var(--gold);border-radius:2px;display:inline-block;flex:none;}
@@ -80,6 +92,14 @@
 .wlink-list li:last-child{border-bottom:none;padding-bottom:0;}
 .wlink-list li a{font-size:.77rem;color:var(--muted);display:flex;align-items:flex-start;gap:5px;line-height:1.55;}
 .wlink-list li a:hover{color:var(--navy);}
+.badge-new{display:inline-flex;gap:2px;margin-left:4px;flex:none;vertical-align:middle;}
+.n-g{background:#e6f9ef;color:#1a8a4a;border:1px solid #a8dfc0;font-size:.54rem;font-weight:700;padding:1px 5px;border-radius:10px;}
+.n-o{background:#fff4e6;color:#b96c10;border:1px solid #f5cea0;font-size:.54rem;font-weight:700;padding:1px 5px;border-radius:10px;}
+.stat-row{display:flex;justify-content:space-between;padding:5px 2px;font-size:.76rem;color:var(--muted);border-bottom:1px solid var(--line);}
+.stat-row:last-child{border-bottom:none;}
+.stat-row strong{color:var(--navy);font-weight:700;}
+.online-dot{display:inline-block;width:6px;height:6px;background:#27ae60;border-radius:50%;margin-right:4px;animation:blink 1.5s infinite;}
+
 .dist-widget{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px;}
 .dist-head{background:var(--navy);color:#fff;font-weight:700;font-size:.8rem;padding:8px 13px;font-family:'Noto Serif Thai',serif;}
 .dist-body{padding:10px 11px 12px;font-size:.76rem;}
@@ -91,19 +111,14 @@
 .d-clear{background:var(--blue-tint);color:var(--navy);}
 .dist-result{font-size:.78rem;color:var(--navy);font-weight:700;margin-top:6px;text-align:center;min-height:20px;}
 .dist-hint{font-size:.66rem;color:var(--muted);margin-top:5px;text-align:center;}
+
+@media(max-width:860px){.hero{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr;}.news-grid{grid-template-columns:1fr;}.info-grid{grid-template-columns:1fr 1fr;}.elearn-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px) { .campaign-grid { grid-template-columns: 1fr; } .camp-card.full { grid-column: span 1; } .video-cta { flex-direction: column; text-align: center; align-items: flex-start; gap: 14px; } }
+@media(max-width:520px){.info-grid,.elearn-grid{grid-template-columns:1fr;}}
 </style>
 @endsection
 
 @section('content')
-
-<div id="splash">
-  <div class="splash-seal"><span>มท</span></div>
-  <h1>ยินดีต้อนรับสู่<br>ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4<br>(นครราชสีมา)</h1>
-  <p>Information and Communication Technology Center Region 4 (Nakhon Ratchasima)</p>
-  <button class="splash-enter" onclick="document.getElementById('splash').classList.add('hidden')">เข้าสู่เว็บไซต์</button>
-  <div class="splash-sub">สำนักงานปลัดกระทรวงมหาดไทย</div>
-</div>
-
 <section class="hero">
   <div class="hero-main-slider">
     <div class="hero-track" id="heroTrack">
@@ -114,17 +129,44 @@
         <h2>พระบาทสมเด็จพระเจ้าอยู่หัว<br>ทรงพระเจริญ</h2>
         <p>ด้วยเกล้าด้วยกระหม่อม ขอเดชะ ข้าพระพุทธเจ้า คณะผู้บริหารและเจ้าหน้าที่ ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4 (นครราชสีมา)</p>
       </div>
+
       <div class="hero-slide" style="background: linear-gradient(140deg, var(--navy) 0%, #1a4070 55%, #1d5186 100%);">
         <div class="hero-glow"></div>
         <span class="hero-tag" style="background: var(--gold); border-color: var(--gold);">วิสัยทัศน์และนโยบาย</span>
         <h2>มุ่งสู่การเป็นองค์กรอัจฉริยะ</h2>
         <p>ด้วยระบบบริหารจัดการเทคโนโลยีสารสนเทศและการสื่อสารที่เป็นสากลและธรรมาภิบาล</p>
       </div>
+
+      <div class="hero-slide" style="background: linear-gradient(140deg, var(--navy) 0%, #1a4070 55%, #1d5186 100%);">
+        <div class="hero-glow"></div>
+        <span class="hero-tag">บริการหลักของ ศสข.4</span>
+        <h2>ระบบประชุมทางไกล VCS</h2>
+        <p>เชื่อมโยงเครือข่ายกระทรวงมหาดไทยทั่วไทย รวดเร็ว ปลอดภัย ประหยัดงบประมาณ</p>
+      </div>
+      
+      <div class="hero-slide" style="background: linear-gradient(140deg, var(--navy) 0%, #1a4070 55%, #1d5186 100%);">
+        <div class="hero-glow"></div>
+        <span class="hero-tag" style="background: #a12b2b; border-color: #d15656;">ความมั่นคงปลอดภัยไซเบอร์</span>
+        <h2>รู้ทันภัยไซเบอร์ ป้องกันข้อมูลองค์กร</h2>
+        <p>เปิดให้ดาวน์โหลด ESET Antivirus V.8 ฟรี สำหรับเจ้าหน้าที่ สป.มท. เพื่อป้องกันไวรัสและมัลแวร์</p>
+      </div>
+      
+      <div class="hero-slide" style="background: linear-gradient(140deg, var(--navy) 0%, #1a4070 55%, #1d5186 100%);">
+        <div class="hero-glow"></div>
+        <span class="hero-tag">วิสัยทัศน์และพันธกิจ</span>
+        <h2>เป้าประสงค์การดำเนินงาน สป.มท.</h2>
+        <p>ภารกิจสนับสนุนเครือข่ายและงานบริการ ติดตั้งระบบสื่อสารดาวเทียมในพื้นที่</p>
+      </div>
     </div>
+  
     <div class="hero-dots-container">
       <span class="hero-dot active" onclick="goToSlide(0)"></span>
       <span class="hero-dot" onclick="goToSlide(1)"></span>
+      <span class="hero-dot" onclick="goToSlide(2)"></span>
+      <span class="hero-dot" onclick="goToSlide(3)"></span>
+      <span class="hero-dot" onclick="goToSlide(4)"></span>
     </div>
+    
     <button class="hero-arrow prev" onclick="moveHeroSlide(-1)">❮</button>
     <button class="hero-arrow next" onclick="moveHeroSlide(1)">❯</button>
   </div>
@@ -137,10 +179,12 @@
       <div class="director-name">นายศุภชัย ศรีแสง</div>
       <div class="director-role">ผู้อำนวยการศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4 (นครราชสีมา)</div>
     </div>
+    
     <div class="quick-btns">
       <a class="q-btn blue" href="#">Front Office</a>
       <a class="q-btn gold" href="#">Back Office</a>
     </div>
+    
     <div class="meeting-card">
       <h4>ประชุมทางไกล VCS</h4>
       <p>ถ่ายทอดผ่านระบบวีดิทัศน์ทางไกล ในเครือข่ายกระทรวงมหาดไทย</p>
@@ -157,9 +201,11 @@
         <h3>เราภูมิใจในความสำเร็จของศูนย์เทคโนฯ สป.มท.</h3>
         <p>วีดิทัศน์นำเสนอผลการดำเนินงาน (Video on demand 10:12 minutes)</p>
       </div>
-      <a href="#" class="video-cta-btn"><span>▶</span> รับชมวิดีโอ</a>
+      <a href="#" class="video-cta-btn">
+        <span>▶</span> รับชมวิดีโอ
+      </a>
     </div>
-    
+
     <div class="sec-head" style="margin-top:22px;">
       <div><span class="label">โครงการ / รณรงค์</span><h2>ป้ายประชาสัมพันธ์</h2></div>
     </div>
@@ -168,12 +214,85 @@
         <div class="img-ph">[รูปภาพแบนเนอร์: แผน 14 ประเทศไทยต้องไปต่อ]</div>
       </a>
       <a href="#" class="camp-card">
-        <div class="img-ph">[รูปภาพ: มาตรฐานทางจริยธรรม]</div>
+        <div class="img-ph">[รูปภาพ: พระราชบัญญัติมาตรฐานทางจริยธรรม พ.ศ. 2562]</div>
         <div class="camp-title">มาตรฐานทางจริยธรรมฯ</div>
       </a>
+      <a href="#" class="camp-card">
+        <div class="img-ph">[รูปภาพ: ธงไตรรงค์ ธำรงไทย]</div>
+        <div class="camp-title">โครงการปลูกจิตสำนึกฯ</div>
+      </a>
     </div>
-    
+
+    <div class="sec-head" style="margin-top:22px;">
+      <div><span class="label">Infographic</span><h2>ข้อมูลประชาสัมพันธ์ผลการปฏิบัติราชการ</h2></div>
+      <a class="more" href="#">ดูทั้งหมด →</a>
     </div>
+    <div class="info-grid">
+      <div class="info-card">ผลการปฏิบัติงาน ศสข.4 ปี 2567</div>
+      <div class="info-card">ผลการปฏิบัติงาน ศสข.4 ปี 2566</div>
+      <div class="info-card">ผลการปฏิบัติงาน ศสข.4 ปี 2565</div>
+    </div>
+
+    <div class="sec-head">
+      <div><span class="label">อัปเดตล่าสุด</span><h2>ประมวลภาพภารกิจรถสื่อสารดาวเทียม</h2></div>
+      <a class="more" href="#">ดูทั้งหมด →</a>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <div class="news-thumb"><span class="chip">11 เม.ย. 2567</span></div>
+        <div class="news-body"><h3>วางเครือข่ายสื่อสารเคลื่อนที่เร็ว (4G/5G) ถวายความปลอดภัย ณ เดอะมอลล์ นครราชสีมา</h3><p>สนับสนุนภารกิจสมเด็จพระกนิษฐาธิราชเจ้าฯ พระราชทานเหรียญกาชาดสมนาคุณ ชั้นที่ 1</p></div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><span class="chip">22 ก.พ. 2567</span></div>
+        <div class="news-body"><h3>วางเครือข่ายสื่อสาร ณ ม.ราชภัฏอุบลราชธานี ถวายความปลอดภัย สมเด็จพระเจ้าลูกเธอ เจ้าฟ้าสิริวัณณวรีฯ</h3><p>เสด็จทอดพระเนตรนิทรรศการงานหัตถกรรมชุมชนภูมิปัญญาไทย</p></div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><span class="chip">8 ก.พ. 2567</span></div>
+        <div class="news-body"><h3>สนับสนุนภารกิจพระราชทานปริญญาบัตร มหาวิทยาลัยอุบลราชธานี</h3><p>เชื่อมโยงวางเครือข่ายสื่อสารถวายความปลอดภัย สมเด็จพระกนิษฐาธิราชเจ้าฯ</p></div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><span class="chip">24 เม.ย. 2566</span></div>
+        <div class="news-body"><h3>ภารกิจสื่อสาร ณ มหาวิทยาลัยเทคโนโลยีสุรนารี</h3><p>วางเครือข่ายสื่อสารเพื่อถวายความปลอดภัยด้านการสื่อสาร สมเด็จพระกนิษฐาธิราชเจ้าฯ</p></div>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin-top:22px;">
+      <div><span class="label">ภาพกิจกรรม</span><h2>ประมวลภาพนิ่ง</h2></div>
+      <a class="more" href="#">ดูทั้งหมด →</a>
+    </div>
+    <div class="activity-grid">
+      <div class="activity-card"><div class="activity-img"></div><div class="activity-caption">กิจกรรม Big Cleaning Day และการขนย้ายอุปกรณ์สำนักงาน</div></div>
+      <div class="activity-card"><div class="activity-img"></div><div class="activity-caption">การปฏิบัติงานภายในสำนักงาน ศสข.4 นครราชสีมา</div></div>
+      <div class="activity-card"><div class="activity-img"></div><div class="activity-caption">ภารกิจสนับสนุนการประชุมผ่านระบบวีดิทัศน์ทางไกล</div></div>
+      <div class="activity-card"><div class="activity-img"></div><div class="activity-caption">การฝึกอบรมและพัฒนาบุคลากร ศสข.4</div></div>
+    </div>
+
+    <div class="sec-head">
+      <div><span class="label">แหล่งเรียนรู้</span><h2>E-Learning</h2></div>
+    </div>
+    <div class="elearn-grid">
+      <div class="elearn-card"><h4>E-Learning มท.</h4><p>สื่อการเรียนรู้กระทรวงมหาดไทย</p></div>
+      <div class="elearn-card"><h4>HRD e-Learning</h4><p>หลักสูตรอบรม Online สป.มท.</p></div>
+      <div class="elearn-card"><h4>Digital Library</h4><p>For SchoolNet</p></div>
+      <div class="elearn-card"><h4>TCU</h4><p>Thailand Cyber University</p></div>
+      <div class="elearn-card"><h4>OCSC Learning</h4><p>สำนักงาน ก.พ.</p></div>
+      <div class="elearn-card"><h4>TDGA</h4><p>สถาบันพัฒนาบุคลากรด้านดิจิทัล</p></div>
+    </div>
+
+    <div class="sec-head">
+      <div><span class="label">ลิงก์ภายนอก</span><h2>สื่อมวลชนและหน่วยงาน</h2></div>
+    </div>
+    <div class="media-row">
+      <a class="media-chip" href="#">ไทยรัฐ</a><a class="media-chip" href="#">เดลินิวส์</a>
+      <a class="media-chip" href="#">คมชัดลึก</a><a class="media-chip" href="#">มติชน</a>
+      <a class="media-chip" href="#">แนวหน้า</a><a class="media-chip" href="#">ผู้จัดการ</a>
+      <a class="media-chip" href="#">กรุงเทพธุรกิจ</a><a class="media-chip" href="#">Nation Group</a>
+      <a class="media-chip" href="#">ช่อง 3</a><a class="media-chip" href="#">ช่อง 5</a>
+      <a class="media-chip" href="#">ช่อง 7</a><a class="media-chip" href="#">MCOT 9</a>
+      <a class="media-chip" href="#">NBT 11</a><a class="media-chip" href="#">Thai PBS</a>
+      <a class="media-chip" href="#">ไปรษณีย์ไทย</a>
+    </div>
+  </div>
 
   <aside>
     <div class="widget">
@@ -182,27 +301,69 @@
         <ul class="wlink-list">
           <li><a href="#">นโยบายรักษาความมั่นคงปลอดภัยด้านสารสนเทศ สป.มท.<span class="badge-new"><span class="n-g">ใหม่</span></span></a></li>
           <li><a href="#">Download Jabber for PC<span class="badge-new"><span class="n-g">ใหม่</span></span></a></li>
+          <li><a href="#">ESET Endpoint Antivirus V.8<span class="badge-new"><span class="n-g">ใหม่</span></span></a></li>
+          <li><a href="#">ประกาศ สป.มท. นโยบายต่อต้านการรับสินบน<span class="badge-new"><span class="n-g">ใหม่</span></span></a></li>
+          <li><a href="#">ประกาศ สป.มท. มาตรการป้องกันผลประโยชน์ทับซ้อน<span class="badge-new"><span class="n-o">ใหม่</span></span></a></li>
+          <li><a href="#">เว็บไซต์วางแผนจัดประชุมสัมมนา ในประเทศไทย</a></li>
+          <li><a href="#">กรอบการประเมินผลการปฏิบัติราชการ</a></li>
+          <li><a href="#">ประกาศเจตจำนง การบริหารงานด้วยความสุจริต</a></li>
         </ul>
       </div>
     </div>
-    
+
+    <div class="widget">
+      <div class="widget-header">รวม Link จังหวัด</div>
+      <div class="widget-body">
+        <ul class="wlink-list">
+          <li><a href="#">จังหวัดนครราชสีมา</a></li>
+          <li><a href="#">จังหวัดบุรีรัมย์</a></li>
+          <li><a href="#">จังหวัดสุรินทร์</a></li>
+          <li><a href="#">จังหวัดศรีสะเกษ</a></li>
+          <li><a href="#">จังหวัดอุบลราชธานี</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="dist-widget">
       <div class="dist-head">ระยะทางระหว่างจังหวัด</div>
       <div class="dist-body">
         <label>จุดเริ่มต้น</label>
-        <select id="from-prov"><option>นครราชสีมา</option></select>
+        <select id="from-prov">
+          <option>กระบี่</option><option>กาญจนบุรี</option><option>กาฬสินธุ์</option>
+          <option>ขอนแก่น</option><option>จันทบุรี</option><option>ฉะเชิงเทรา</option>
+          <option>ชลบุรี</option><option>ชัยภูมิ</option><option>เชียงใหม่</option>
+          <option>นครราชสีมา</option><option>บุรีรัมย์</option><option>สุรินทร์</option>
+          <option>ศรีสะเกษ</option><option>อุบลราชธานี</option>
+        </select>
         <label>ปลายทาง</label>
-        <select id="to-prov"><option>กรุงเทพมหานคร</option></select>
+        <select id="to-prov">
+          <option>กระบี่</option><option>กาญจนบุรี</option><option>นครราชสีมา</option>
+          <option>บุรีรัมย์</option><option>สุรินทร์</option><option>ศรีสะเกษ</option>
+          <option>อุบลราชธานี</option><option>กรุงเทพมหานคร</option>
+        </select>
         <div class="dist-row">
           <button class="d-show" onclick="document.getElementById('dist-result').textContent='ระยะทาง: — กม.'">แสดงข้อมูล</button>
           <button class="d-clear" onclick="document.getElementById('dist-result').textContent=''">ลบข้อมูล</button>
         </div>
         <div class="dist-result" id="dist-result"></div>
+        <div class="dist-hint">★ แผนที่ ★ ทางหลวงแผ่นดิน</div>
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="widget-header">สถิติผู้เข้าชม</div>
+      <div class="widget-body">
+        <div class="stat-row"><span><span class="online-dot"></span>ออนไลน์</span><strong>1</strong></div>
+        <div class="stat-row"><span>วันนี้</span><strong>11</strong></div>
+        <div class="stat-row"><span>เมื่อวาน</span><strong>4</strong></div>
+        <div class="stat-row"><span>สัปดาห์นี้</span><strong>15</strong></div>
+        <div class="stat-row"><span>เดือนนี้</span><strong>102</strong></div>
+        <div class="stat-row"><span>ปีนี้</span><strong>499</strong></div>
+        <div class="stat-row"><span>ทั้งหมด</span><strong>9,109</strong></div>
       </div>
     </div>
   </aside>
 </div>
-
 @endsection
 
 @section('scripts')
@@ -210,56 +371,56 @@
   const track = document.getElementById('heroTrack');
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
-  
-  if(slides.length > 0) {
-      const firstClone = slides[0].cloneNode(true);
-      const lastClone = slides[slides.length - 1].cloneNode(true);
-      track.appendChild(firstClone);
-      track.insertBefore(lastClone, slides[0]);
 
-      let heroSlideIndex = 1; 
-      const totalHeroSlides = slides.length;
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
 
-      track.style.transition = 'none';
-      track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
 
-      window.moveHeroSlide = function(direction) {
-        if (heroSlideIndex >= totalHeroSlides + 1 || heroSlideIndex <= 0) return;
-        track.style.transition = 'transform 0.5s ease-in-out';
-        heroSlideIndex += direction;
-        track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
-        updateDots();
-      }
+  let heroSlideIndex = 1; 
+  const totalHeroSlides = slides.length; 
 
-      window.goToSlide = function(index) {
-        track.style.transition = 'transform 0.5s ease-in-out';
-        heroSlideIndex = index + 1;
-        track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
-        updateDots();
-      }
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
 
-      function updateDots() {
-        let activeIndex = heroSlideIndex - 1;
-        if (heroSlideIndex === totalHeroSlides + 1) activeIndex = 0;
-        if (heroSlideIndex === 0) activeIndex = totalHeroSlides - 1;
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[activeIndex]) dots[activeIndex].classList.add('active');
-      }
-
-      track.addEventListener('transitionend', () => {
-        if (heroSlideIndex === totalHeroSlides + 1) { 
-          track.style.transition = 'none';
-          heroSlideIndex = 1;
-          track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
-        }
-        if (heroSlideIndex === 0) {
-          track.style.transition = 'none';
-          heroSlideIndex = totalHeroSlides;
-          track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
-        }
-      });
-
-      setInterval(() => window.moveHeroSlide(1), 6000);
+  function moveHeroSlide(direction) {
+    if (heroSlideIndex >= totalHeroSlides + 1 || heroSlideIndex <= 0) return;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    heroSlideIndex += direction;
+    track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+    updateDots();
   }
+
+  function goToSlide(index) {
+    track.style.transition = 'transform 0.5s ease-in-out';
+    heroSlideIndex = index + 1; 
+    track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    let activeIndex = heroSlideIndex - 1;
+    if (heroSlideIndex === totalHeroSlides + 1) activeIndex = 0;
+    if (heroSlideIndex === 0) activeIndex = totalHeroSlides - 1;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[activeIndex]) dots[activeIndex].classList.add('active');
+  }
+
+  track.addEventListener('transitionend', () => {
+    if (heroSlideIndex === totalHeroSlides + 1) { 
+      track.style.transition = 'none';
+      heroSlideIndex = 1;
+      track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+    }
+    if (heroSlideIndex === 0) { 
+      track.style.transition = 'none';
+      heroSlideIndex = totalHeroSlides;
+      track.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+    }
+  });
+
+  setInterval(() => moveHeroSlide(1), 6000);
 </script>
 @endsection

@@ -20,17 +20,6 @@ body{font-family:'Noto Sans Thai',sans-serif;background:var(--cream);color:var(-
 a{color:inherit;text-decoration:none;}
 h1,h2,h3,h4{font-family:'Noto Serif Thai',serif;}
 
-/* SPLASH */
-#splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,var(--navy) 0%,#0a1c33 45%,#1a3a5c 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;transition:opacity .7s ease,visibility .7s ease;}
-#splash.hidden{opacity:0;visibility:hidden;}
-.splash-seal{width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#FBEFC8,var(--gold) 58%,#7a5c10 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(200,150,30,.25),0 8px 32px rgba(0,0,0,.45);margin-bottom:20px;}
-.splash-seal span{font-size:1.9rem;font-weight:700;color:#2d1e04;font-family:'Noto Serif Thai',serif;}
-.splash h1{font-size:1.55rem;line-height:1.4;max-width:540px;color:#fff;}
-.splash p{color:#b8c8dc;font-size:.88rem;margin-top:8px;}
-.splash-enter{margin-top:28px;background:var(--gold);color:#1a0e00;border:none;padding:13px 36px;border-radius:30px;font-family:'Noto Sans Thai',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(200,150,30,.4);transition:transform .15s;}
-.splash-enter:hover{transform:translateY(-2px);}
-.splash-sub{color:#8ea5be;font-size:.75rem;margin-top:10px;}
-
 /* TOPBAR */
 .topbar{background:var(--navy);color:#b0bfcf;font-size:.75rem;}
 .topbar-inner{max-width:1200px;margin:0 auto;padding:5px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
@@ -45,9 +34,7 @@ h1,h2,h3,h4{font-family:'Noto Serif Thai',serif;}
 /* HEADER */
 .site-header {
   width: 100%;
-  background: 
-    linear-gradient(180deg, rgba(13, 38, 68, 0.4) 0%, rgba(13, 38, 68, 0.9) 100%),
-    url('{{ asset("images/orange2.jpg") }}') center/cover no-repeat; /* แก้ Path รูป */
+  background: linear-gradient(180deg, rgba(13, 38, 68, 0.4) 0%, rgba(13, 38, 68, 0.9) 100%), url('{{ asset("images/orange2.jpg") }}') center/cover no-repeat;
   color: #fff;
   border-bottom: 3px solid var(--gold);
   aspect-ratio: 21 / 9;
@@ -90,7 +77,7 @@ nav.main-nav{background:var(--white);border-bottom:1px solid var(--line);positio
 .mega-tab-list li { padding: 12px 20px; font-size: 0.85rem; font-weight: 600; color: #555; cursor: pointer; border-top: 2px solid transparent; border-bottom: 1px solid #f0f0f0; transition: 0.2s; }
 .mega-tab-list li:hover { color: var(--gold); }
 .mega-tab-list li.active { color: var(--gold); border-top: 2px solid var(--gold); background: #fdfcf8; }
-.mega-content-box { display: none; padding: 20px 25px; min-width: 380px; background: #fff; max-width: 420px; }
+.mega-content-box { display: none; padding: 20px 25px; min-width: 380px; max-width: 420px; background: #fff; }
 .mega-menu-box.show-content .mega-content-box { display: block; }
 .mega-pane { display: none; flex-direction: column; gap: 12px; }
 .mega-pane.active { display: flex; }
@@ -102,7 +89,7 @@ nav.main-nav{background:var(--white);border-bottom:1px solid var(--line);positio
 .search-box{display:flex;align-items:center;gap:5px;background:var(--blue-tint);border:1px solid #c8d8e8;border-radius:18px;padding:5px 12px;}
 .search-box input{border:none;background:none;outline:none;font-family:inherit;font-size:.8rem;width:150px;color:var(--ink);}
 
-/* GENERAL CLASSES สำหรับใช้ในหน้าเนื้อหา */
+/* GENERAL CLASSES สำหรับหน้าเนื้อหา */
 .outer{max-width:1200px;margin:0 auto;padding:24px 20px 0;}
 
 /* COOKIE & FOOTER */
@@ -166,15 +153,16 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
 <div class="ticker-wrap">
   <span class="ticker-label">ข่าวด่วน</span>
   <div class="ticker-track">
-    <span class="ticker-content">จังหวัดนครราชสีมา "เมืองหญิงกล้า ผ้าไหมดี หมี่โคราช ปราสาทหิน ดินด่านเกวียน" &nbsp;•&nbsp; Download Jabber for PC [ใหม่] &nbsp;•&nbsp; ESET Endpoint Antivirus V.8 [ใหม่] &nbsp;•&nbsp; แผนปฏิบัติการดิจิทัลศูนย์ฯ สป. ปีงบประมาณ 2566 [ใหม่] &nbsp;•&nbsp;</span>
+    <span class="ticker-content">จังหวัดนครราชสีมา "เมืองหญิงกล้า ผ้าไหมดี หมี่โคราช ปราสาทหิน ดินด่านเกวียน" &nbsp;•&nbsp; Download Jabber for PC [ใหม่] &nbsp;•&nbsp; ESET Endpoint Antivirus V.8 [ใหม่] &nbsp;•&nbsp; แผนปฏิบัติการดิจิทัลศูนย์ฯ สป. ปีงบประมาณ 2566 [ใหม่] &nbsp;•&nbsp; ระเบียบการเข้าอยู่บ้านพักของราชการ [ใหม่] &nbsp;•&nbsp; คำสั่ง ศสข.4 (นม) เรื่องการแบ่งงานและมอบหมายหน้าที่ [ใหม่] &nbsp;•&nbsp;</span>
   </div>
 </div>
 
 <nav class="main-nav">
   <div class="nav-wrap">
 
+    <!-- 1. เกี่ยวกับหน่วยงาน -->
     <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
-      <a href="javascript:void(0);" class="nav-btn">เกี่ยวกับหน่วยงาน ▾</a>
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">เกี่ยวกับหน่วยงาน ▾</a>
       <div class="mega-menu-box">
         <ul class="mega-tab-list">
           <li onclick="openMegaTab(event, 'about-1')">ข้อมูลทั่วไป</li>
@@ -184,10 +172,243 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
           <div id="about-1" class="mega-pane">
             <a href="#">> ประวัติความเป็นมา และสถานที่ตั้ง</a>
             <a href="#">> อำนาจและหน้าที่ของ ศสข.</a>
+            <a href="#">> ลักษณะภารกิจของ ศสข.</a>
           </div>
           <div id="about-2" class="mega-pane">
             <a href="#">> ทำเนียบผู้บริหาร ศสข.4 (นม)</a>
             <a href="#">> แนะนำบุคลากรปัจจุบัน</a>
+            <a href="#">> การฝึกอบรม/ดูงานของบุคลากร</a>
+            <a href="#">> หมายเลขโทรศัพท์และอีเมลของข้าราชการ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ข้อมูลและรายงาน -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">ข้อมูลและรายงาน ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'report-1')">ข้อมูลทั่วไป</li>
+          <li onclick="openMegaTab(event, 'report-2')">สรุปผลการดำเนินงาน</li>
+          <li onclick="openMegaTab(event, 'report-3')">E – Reports</li>
+          <li onclick="openMegaTab(event, 'report-4')">แผนปฏิบัติการ ศสส.สป.</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="report-1" class="mega-pane">
+            <a href="#">> ทะเบียนคุมทรัพย์สินประจำปีงบประมาณ 2567</a>
+            <a href="#">> รายการตรวจสอบครุภัณฑ์ประจำปีงบประมาณ 2567</a>
+            <a href="#">> เวรรักษาการณ์ฯ ประจำเดือน</a>
+            <a href="#">> คำสั่งตรวจเวรสถานที่ราชการ</a>
+          </div>
+          <div id="report-2" class="mega-pane">
+            <a href="#">> การจัดทำรายงานประจำปี 2567</a>
+            <a href="#">> การจัดทำรายงานประจำปี 2565</a>
+            <a href="#">> การจัดทำรายงานประจำปี 2564</a>
+            <a href="#">> การจัดทำรายงานประจำปี 2563</a>
+          </div>
+          <div id="report-3" class="mega-pane">
+            <a href="#">> การปฏิบัติงานรายไตรมาส (รต.1-8)</a>
+            <a href="#">> การประชุมผ่านระบบวีดิทัศน์ทางไกล (VCS)</a>
+            <a href="#">> การปฏิบัติงานระบบสื่อสารผ่านดาวเทียม (FTDMA)</a>
+            <a href="#">> การรับ-ส่งข่าว</a>
+            <a href="#">> สถิติการใช้กระแสไฟฟ้า</a>
+          </div>
+          <div id="report-4" class="mega-pane">
+            <a href="#">> แผนปฏิบัติการดิจิทัลศูนย์ฯ สป. ปีงบประมาณ 2566 <span class="mnew">ใหม่</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. ข้อมูลด้านช่าง -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">ข้อมูลด้านช่าง ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'tech-1')">บริการเครือข่าย</li>
+          <li onclick="openMegaTab(event, 'tech-2')">ข้อมูลโทรศัพท์</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="tech-1" class="mega-pane">
+            <a href="#">> วงจรเช่าทางไกลในข่าย ศสข.4 (นม)</a>
+            <a href="#">> ผู้ขอใช้บริการเครือข่าย Online</a>
+            <a href="#">> ข้อมูลระบบสื่อสารข้อมูล และ ระบบ ATM</a>
+          </div>
+          <div id="tech-2" class="mega-pane">
+            <a href="#">> โทรศัพท์ มท.ในโคราชติดตั้งที่ใดบ้าง?</a>
+            <a href="#">> จำนวนเลขหมายโทรศัพท์ในเขตรับผิดชอบ</a>
+            <a href="#">> Access Code เครือข่ายโทรศัพท์ มท.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. คำสั่ง / ระเบียบ -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">คำสั่ง / ระเบียบ ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'rule-1')">คำสั่ง</li>
+          <li onclick="openMegaTab(event, 'rule-2')">แบบฟอร์ม</li>
+          <li onclick="openMegaTab(event, 'rule-3')">ระเบียบ / ข้อบังคับ</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="rule-1" class="mega-pane">
+            <a href="#">> คำสั่ง ศสข.4 (นม) เรื่องการแบ่งงานและมอบหมายหน้าที่ <span class="mnew">ใหม่</span></a>
+            <a href="#">> คำสั่ง สป.มท. เรื่องการมอบอำนาจเกี่ยวกับการบริหารงานพัสดุ <span class="mnew">ใหม่</span></a>
+            <a href="#">> คำสั่ง ศสข.4 (นม) เรื่องแต่งตั้งคณะกรรมการบ้านพัก <span class="mnew">ใหม่</span></a>
+            <a href="#">> คำสั่ง สป.มท. เรื่องแต่งตั้งคณะกรรมการประเมินผลการทดลองปฏิบัติหน้าที่</a>
+            <a href="#">> คำสั่ง สป.มท.ที่ 156/2542 มอบอำนาจอนุมัติเดินทางราชการในราชอาณาจักร</a>
+          </div>
+          <div id="rule-2" class="mega-pane">
+            <a href="#">> แบบฟอร์มสมุดลงเวลาการปฏิบัติราชการของ ศสข.4 (นม)</a>
+            <a href="#">> แบบฟอร์มสมุดบันทึกการรับ-ส่งเวร ของ ศสข.4 (นม)</a>
+            <a href="#">> แบบฟอร์มแบบรายงานการปฏิบัติหน้าที่ รปภ. ของ ศสข.4 (นม)</a>
+          </div>
+          <div id="rule-3" class="mega-pane">
+            <a href="#">> หลักเกณฑ์การใช้รถยนต์สื่อสารดาวเทียม</a>
+            <a href="#">> ระเบียบกระทรวงการคลังว่าด้วยเงินทดรองราชการ 2547</a>
+            <a href="#">> ระเบียบการเข้าอยู่บ้านพักของราชการ <span class="mnew">ใหม่</span></a>
+            <a href="#">> ข้อบังคับเงินออมสวัสดิการของ ศสข.4 (นม)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. คู่มือ / ดาวน์โหลด -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">คู่มือ / ดาวน์โหลด ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'doc-1')">คู่มือปฏิบัติงาน</li>
+          <li onclick="openMegaTab(event, 'doc-2')">Jabber / Webex</li>
+          <li onclick="openMegaTab(event, 'doc-3')">ระบบต่างๆ และดาวน์โหลด</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="doc-1" class="mega-pane">
+            <a href="#">> กฎหมายความปลอดภัยเกี่ยวกับการสื่อสาร <span class="mnew">ใหม่</span></a>
+            <a href="#">> Technology Transfer Configuration <span class="mnew">ใหม่</span></a>
+            <a href="#">> MOI Network Management <span class="mnew">ใหม่</span></a>
+            <a href="#">> ระบบรักษาความปลอดภัยสารสนเทศ สป.มท. 2565 <span class="mnew">ใหม่</span></a>
+            <a href="#">> ระบบ IP Telephony ของ สป.มท. <span class="mnew">ใหม่</span></a>
+            <a href="#">> คู่มือ cisco jabber / webex meeting</a>
+            <a href="#">> ระบบโทรศัพท์ IP / เทคโนโลยี MPLS</a>
+            <a href="#">> คู่มือ Edocument / Eoffice</a>
+            <a href="#">> PABX MD110</a>
+          </div>
+          <div id="doc-2" class="mega-pane">
+            <a href="#">> คู่มือการใช้งาน cisco jabber</a>
+            <a href="#">> Account Jabber</a>
+            <a href="#">> หมายเลขห้องประชุมแต่ละจังหวัด-jabber</a>
+            <a href="#">> การติดตั้งและใช้งานระบบ unified communication-jabber</a>
+            <a href="#">> คู่มือ cisco webex meeting สำหรับผู้ควบคุมห้องประชุม</a>
+            <a href="#">> คู่มือ cisco webex meeting สำหรับผู้ใช้งานทั่วไป</a>
+            <a href="#">> การใช้งาน cisco webex สำหรับผู้ใช้งานทั่วไป</a>
+          </div>
+          <div id="doc-3" class="mega-pane">
+            <a href="#">> ระบบโทรศัพท์ IP (IP Phone)</a>
+            <a href="#">> เทคโนโลยี MPLS</a>
+            <a href="#">> คู่มือการใช้งาน Edocument</a>
+            <a href="#">> คู่มือการใช้งาน Eoffice</a>
+            <a href="#">> การบริหารจัดการชุมสายโทรศัพท์ MD110</a>
+            <a href="#">> การควบคุมอุปกรณ์ MCU</a>
+            <hr style="border:none; border-top:1px solid #e0e0e0; margin:10px 0;">
+            <a href="#" style="color:#c62828; font-weight:bold;">> Jabber for PC <span class="mnew">ใหม่</span></a>
+            <a href="#" style="color:#c62828; font-weight:bold;">> ESET Endpoint Antivirus V.8 <span class="mnew">ใหม่</span></a>
+            <a href="#">> Cisco Webex Meeting</a>
+            <a href="#">> pebuilder สำหรับทำ Windows PE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. อบรม / E-Learning -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">อบรม / E-Learning ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'learn-1')">ความรู้ด้านเทคนิค</li>
+          <li onclick="openMegaTab(event, 'learn-2')">Online Learning</li>
+          <li onclick="openMegaTab(event, 'learn-3')">สรรหามาฝาก</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="learn-1" class="mega-pane">
+            <a href="#">> ทางด่วนข้อมูล</a>
+            <a href="#">> ศูนย์ข้อมูลกลาง</a>
+            <a href="#">> ระบบ GIS</a>
+            <a href="#">> PABX MD110</a>
+          </div>
+          <div id="learn-2" class="mega-pane">
+            <a href="#">> TPQI E-Training [สถาบันคุณวุฒิวิชาชีพ]</a>
+            <a href="#">> OCSC Learning Portal [สำนักงาน ก.พ.]</a>
+            <a href="#">> TDGA [สถาบันพัฒนาบุคลากรภาครัฐด้านดิจิทัล]</a>
+            <a href="#">> E-Learning กระทรวงมหาดไทย</a>
+            <a href="#">> หลักสูตรอบรม On-Line HRD e-Learning</a>
+            <a href="#">> Digital Library For SchoolNet</a>
+            <a href="#">> Thailand Cyber University (TCU)</a>
+          </div>
+          <div id="learn-3" class="mega-pane">
+            <a href="#">> ESET Endpoint Antivirus V.6 <span class="mnew">ใหม่</span></a>
+            <a href="#">> E-Mail และหมายเลขโทรศัพท์ข้าราชการ ศสส.สป. <span class="mnew">ใหม่</span></a>
+            <a href="#">> pebuilder สำหรับทำ Windows PE</a>
+            <a href="#">> โปรแกรม SCAN VIRUS trojan</a>
+            <a href="#">> Log In เข้า Windows Server 2003 และ Windows xp</a>
+            <a href="#">> มาตรฐานเว็บไซต์ภาครัฐ</a>
+            <a href="#">> สำนักบริหารยุทธศาสตร์ 18 กลุ่มจังหวัด</a>
+            <a href="#">> รายละเอียดตัวชี้วัดฯ (Template) ตัวชี้วัดรายบุคคล (IPA3)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. ภารกิจ / Links -->
+    <div class="nav-item has-mega" onmouseleave="resetMegaMenu(this)">
+      <a href="javascript:void(0);" class="nav-btn" onclick="toggleMainLock(event, this)">ภารกิจ / Links ▾</a>
+      <div class="mega-menu-box">
+        <ul class="mega-tab-list">
+          <li onclick="openMegaTab(event, 'link-1')">สถิติและภารกิจ</li>
+          <li onclick="openMegaTab(event, 'link-2')">Link Hot hot</li>
+          <li onclick="openMegaTab(event, 'link-3')">เครือข่าย Intranet</li>
+          <li onclick="openMegaTab(event, 'link-4')">E-Office ศสข.4 (นม)</li>
+        </ul>
+        <div class="mega-content-box">
+          <div id="link-1" class="mega-pane">
+            <a href="#">> ตัวชี้วัดการให้บริการสื่อสารฯ</a>
+            <a href="#">> การใช้วงจรสื่อสารสัญญาณ (แบบ ร.4)</a>
+            <a href="#">> การพัฒนาบุคลากรของ ศสข.4 (นม)</a>
+            <a href="#">> PMQA</a>
+            <a href="#">> Training เครื่องดับเพลิง ศสข.4 (นม)</a>
+            <a href="#">> Training IP Star ศสข.4 (นม)</a>
+            <a href="#">> Modify IP Star Terminal Unit</a>
+            <a href="#">> Outsourcing</a>
+            <a href="#">> ระบบหนังสือเวียน</a>
+            <a href="#">> ภารกิจสนับสนุน Tsunami ภาคใต้</a>
+          </div>
+          <div id="link-2" class="mega-pane">
+            <a href="#">> ข่าวของหน่วยงาน</a>
+            <a href="#">> หมายเลขโทรศัพท์ข่ายมหาดไทย</a>
+            <a href="#">> แนวทางปฏิบัติราชการ กระทรวงมหาดไทย</a>
+            <a href="#">> เบอร์ประสาน จนท.VCS ศสข.4 (นม) และจังหวัดลูกข่าย</a>
+            <a href="#">> ประมวลภาพแห่งความทรงจำ</a>
+            <a href="#">> โครงการจัดฝึกอบรมของ ศสส.สป.</a>
+            <a href="#">> ประวัตินักศึกษาฝึกงาน</a>
+          </div>
+          <div id="link-3" class="mega-pane">
+            <a href="#">> ศสส.สป.</a>
+            <a href="#">> ศสข.1 (อย) — ศสข.4 (นม)</a>
+            <a href="#">> ศสข.5 (อด) — ศสข.8 (พล)</a>
+            <a href="#">> ศสข.9 (นว) — ศสข.12 (สข)</a>
+            <a href="#">> Moinet</a>
+            <a href="#">> กองการเจ้าหน้าที่ สป.</a>
+            <a href="#">> สหกรณ์ออมทรัพย์กระทรวงมหาดไทย</a>
+            <a href="#">> สำนักงาน ก.พ.ร. / กรมบัญชีกลาง</a>
+            <a href="#">> กระทรวงมหาดไทย</a>
+          </div>
+          <div id="link-4" class="mega-pane">
+            <a href="#">> สำหรับเจ้าหน้าที่ e-Office</a>
+            <a href="#">> สารบรรณอิเล็กทรอนิกส์ edocument</a>
+            <a href="#">> Mail moi.go.th</a>
           </div>
         </div>
       </div>
@@ -196,9 +417,10 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
     <div class="nav-right">
       <div class="search-box">
         <span aria-hidden="true">🔍</span>
-        <input type="text" placeholder="ค้นหาข่าว / เอกสาร...">
+        <input type="text" placeholder="ค้นหาข่าว / เอกสาร..." aria-label="กรอกคำค้นหา ข่าว หรือเอกสารภายในเว็บไซต์" title="ช่องค้นหา">
       </div>
     </div>
+    
   </div>
 </nav>
 
@@ -212,6 +434,7 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
       <h4>ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4 (นครราชสีมา)</h4>
       <p>ถ.กำแหงสงคราม ต.ในเมือง อ.เมืองนครราชสีมา จ.นครราชสีมา 30000</p>
       <p>โทร. (มท) 36443 | (TOT) 0-4424-2995</p>
+      <p>โทรสาร (มท) 36466, 36455 | (TOT) 0-4424-2995 ต่อ 9</p>
       <p>อีเมล: zonel4@moi.go.th</p>
     </div>
     <div>
@@ -219,6 +442,8 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
       <div class="fl">
         <a href="#">E-Office ศสข.4</a>
         <a href="#">สารบรรณอิเล็กทรอนิกส์</a>
+        <a href="#">Mail moi.go.th</a>
+        <a href="#">www.live.moi.go.th (VCS)</a>
       </div>
     </div>
     <div>
@@ -226,17 +451,22 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
       <div class="fl">
         <a href="#">ศสข.1 (อย) — ศสข.4 (นม)</a>
         <a href="#">ศสข.5 (อด) — ศสข.8 (พล)</a>
+        <a href="#">ศสข.9 (นว) — ศสข.12 (สข)</a>
       </div>
     </div>
     <div>
       <h4>เกี่ยวกับเว็บไซต์</h4>
       <div class="fl">
         <a href="#">นโยบายเว็บไซต์ (Website Policy)</a>
+        <a href="#">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
+        <a href="#">นโยบายการรักษาความมั่นคงปลอดภัย</a>
+        <a href="#">นโยบายคุกกี้ (Cookie Policy)</a>
+        <a href="#">คำถามที่พบบ่อย (FAQ)</a>
         <a href="#">แผนผังเว็บไซต์ (Sitemap)</a>
       </div>
     </div>
   </div>
-  <div class="footer-bar">© 2569 ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4 (นครราชสีมา) — ออกแบบและพัฒนาโดยทีมงาน <b>ศสข.4 (นม)</b></div>
+  <div class="footer-bar">© 2569 ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร เขต 4 (นครราชสีมา) — สำนักงานปลัดกระทรวงมหาดไทย &nbsp;|&nbsp; ออกแบบและพัฒนาโดยทีมงาน <b>ศสข.4 (นม)</b></div>
 </footer>
 
 <div class="cookie-banner" id="cookie">
@@ -248,17 +478,15 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
 </div>
 
 <script>
-  // Script ปรับขนาดตัวอักษร
   let currentZoom = 1;
   function changeFontSize(step) {
-    if (step === 0) { currentZoom = 1; } 
-    else { currentZoom += (step * 0.1); }
+    if (step === 0) currentZoom = 1;
+    else currentZoom += (step * 0.1);
     if (currentZoom < 0.8) currentZoom = 0.8;
     if (currentZoom > 1.4) currentZoom = 1.4;
     document.documentElement.style.fontSize = (currentZoom * 100) + "%";
   }
 
-  // Script นาฬิกา Real-time
   function updateClock() {
     const now = new Date();
     const thaiDays = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
@@ -266,9 +494,8 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
     const day = thaiDays[now.getDay()];
     const date = now.getDate();
     const month = thaiMonths[now.getMonth()];
-    const year = now.getFullYear() + 543;
+    const year = now.getFullYear() + 543; 
     const time = now.toLocaleTimeString('th-TH');
-    
     const dateContainer = document.getElementById('realtime-date');
     if (dateContainer) {
       dateContainer.innerHTML = '<span>วัน' + day + 'ที่ ' + date + ' ' + month + ' พ.ศ. ' + year + '</span><strong>' + time + '</strong>';
@@ -277,7 +504,6 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
   setInterval(updateClock, 1000);
   updateClock();
 
-  // Script Mega Menu
   function openMegaTab(evt, tabId) {
     evt.preventDefault();
     let megaBox = evt.currentTarget.closest('.mega-menu-box');
@@ -289,6 +515,7 @@ footer p{font-size:.75rem;color:#8ba0b5;margin-bottom:5px;line-height:1.6;}
     document.getElementById(tabId).classList.add('active');
     evt.currentTarget.classList.add('active');
   }
+
   function resetMegaMenu(navItem) {
     let megaBox = navItem.querySelector('.mega-menu-box');
     if(megaBox) {
